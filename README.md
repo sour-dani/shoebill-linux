@@ -1,5 +1,4 @@
-<h1><img align=right src="../../../pruten.github.io/raw/master/web/stork_tiny_head3.jpg"/>Shoebill</h1>
-
+# Shoebill 
 A Macintosh II emulator that runs A/UX (and A/UX only). 
 
 Shoebill is an all-new, BSD-licensed Macintosh II emulator designed from the ground up with the singular goal of running A/UX. 
@@ -9,6 +8,32 @@ Shoebill requires a Macintosh II, IIx or IIcx ROM, and a disk image with A/UX in
 [Download the latest release], and then see the [getting started] wiki.  
 Also check out [screenshots].
 
+# Notes 
+Most of the information for this fork comes from an [Astr0baby blog post from **2019**]((https://astr0baby.wordpress.com/2019/05/02/a-ux-apple-unix-for-68k-macintosh/))
+
+Feel free to submit Pull Requests, however this fork isn't actively maintained as I simply wanted to try to get Shoebill to run on Raspian.
+
+During testing the resolution can be weirdly misaligned and there are some random sudden slowdowns on mouse movement after tabbing to another window.
+
+![Shoebill 0.0.5 running on Linux](img/screenshot_linux.png)
+
+# Build instructions for Linux
+`Debian-based`
+```
+sudo apt install build-essential libsdl2-dev  uuid-dev
+git clone https://github.com/sour-dani/shoebill-linux
+cd shoebill-linux/sdl-gui
+./lin_build.sh
+```
+
+# Run instructions for Linux
+Move the compiled `shoebill` file to your desired directory
+Acquire a Macintosh II, IIx or IIcx ROM and a disk image with A/UX installed. 
+```
+./shoebill rom=./MacII.ROM disk0=aux.img  width=1024 height=768 ram=64
+```
+
+# Updates
 __Update (March 29, 2023): About issues/pull requests__
 
 __I just wanted to say that I appreciate some folks are still using Shoebill and submitting issues and pull requests. I wish I could continue working on this project, but there's a likely conflict of interest, and so I've mostly avoided pushing changes. I apologize for being unable to address the many, many bugs in this repo. (Also for anyone unaware, [Qemu is now able] now to run A/UX 3.x on its emulated Quadra 800.)__
